@@ -25,6 +25,10 @@ $pink: #de5252;
 $lightPink: #ec7171;
 $blue: #56819f;
 
+//Default padding
+//$defaultPadding: 18px;
+$defaultIndent: 18px;
+
 
 // Component var
 
@@ -37,6 +41,7 @@ $linkLargeFont: 16px;
 // Title component
 $titleColor: #a6a6a6;
 $titleFontSize: 16px;
+$smallTitleFontSize: 14px;
 
 //Btn component
 $btnFontSize: 18px;
@@ -51,3 +56,7 @@ $btnDisabledBgHover: $lightGrey;
 // Table component
 $tableFontSize: 13px;
 $tableTrHover: #f1f3f3;
+
+//Aside component
+$asideBg: #191919;
+$asideWidth: 188px;

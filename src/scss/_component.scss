@@ -12,6 +12,10 @@
 .page-title{
   @extend %title;
   text-transform: uppercase;
+
+  .small-title{
+    font-size: $smallTitleFontSize;
+  }
 }
 
 
@@ -38,6 +42,10 @@
   color: $btnDefaultColor;
   border-radius: 2px;
   display: inline-block;
+
+  & + btn{
+    margin-left: $defaultIndent;
+  }
 
   &.btn-default{
     background-color: $btnDefaultBg;
@@ -70,8 +78,20 @@
   border-collapse: collapse;
   font-size: $tableFontSize;
 
+  &.full-width{
+    width: 100%;
+  }
+
   tbody{
+
     tr{
+
+      &:last-child{
+        td{
+          border-bottom: 1px solid $lightGrey;
+        }
+      }
+
       &:hover{
         background-color: $tableTrHover;
       }
@@ -108,11 +128,170 @@
   }
 }
 
+// Pagination
+%activePaginationLink{
+  background-color: $xsLightGrey;
+  color: $darkGrey;
+  border-radius: 2px;
+}
+.pagination{
+
+  li{
+    display: inline-block;
+
+    &.active{
+      a{
+        @extend %activePaginationLink
+      }
+    }
+
+    a{
+      display: inline-block;
+      padding: $defaultIndent;
+
+      &:hover{
+        @extend  %activePaginationLink
+      }
+    }
+  }
+}
+
+//Container
+.container-fluid{
+  padding: $defaultIndent;
+}
+.container-sm{
+  max-width: 684px;
+  margin: 0 auto;
+}
+
+// Header
+.header{
+  background-color: #fff;
+  border-bottom: 1px solid $lightGrey;
+  right: 0;
+  left: 0;
+  height: 60px;
+}
+
+// Circle
+.circle{
+
+}
 
 
+// Aside
+%activeLink{
+  background-color: #282828;
+  color: #ffffff;
+  border-left-color: $orange;
+}
 
+.aside{
+  background-color: $asideBg;
+  width: $asideWidth;
+  height: 100vh;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
 
+  .menu-control{
+    padding: $defaultIndent;
 
+    .menu-btn{
+      cursor: pointer;
+      span{
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: $darkGrey;
+
+        & + span{
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .aside-menu{
+    ul{
+      li{
+        color: $darkGrey;
+
+        &.active{
+          a{
+            @extend %activeLink
+          }
+        }
+
+        a{
+          display: block;
+          padding: 14px;
+          border-left: 4px solid transparent;
+          
+          &:hover{
+            @extend %activeLink
+          }
+        }
+      }
+    }
+  }
+
+  .your-manager{
+    padding: 27px $defaultIndent;
+    border-top: $darkGrey;
+
+    .manager-info{
+      margin-top: $defaultIndent;
+
+      .manager-photo {
+        position: relative;
+        margin-right: 10px;
+
+        .status {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          position: absolute;
+          right: 0;
+          top: 0;
+
+          &.online {
+            background-color: $green;
+          }
+          &.offline {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Content wrapper
+.content-wrapper{
+  padding: $defaultIndent;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.panel{
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  & + .panel{
+    margin-top: $defaultIndent;
+  }
+
+  .panel-header{
+    border-bottom: 1px solid $lightGrey;
+    padding: $defaultIndent;
+  }
+
+  .panel-body{
+    padding: $defaultIndent;
+  }
+}
 
 
 
