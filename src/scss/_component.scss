@@ -327,6 +327,18 @@
   }
 }
 
+.panel-date{
+  padding: 30px 0;
+  border-bottom: 1px solid $lightGrey;
+}
+
+//date input block
+.datepicker-form{
+  .btn{
+    vertical-align: middle;
+  }
+}
+
 //default input
 .form-control{
   border: 1px solid $lightGrey;
@@ -337,6 +349,25 @@
   font-weight: $fontLight;
 }
 
+//date input group
+.date-input-wrap{
+  padding: 4px 0;
+  border: 1px solid $lightGrey;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+
+  .date-control{
+    padding: 12px 16px;
+  }
+
+  #to{
+    border-left: 1px solid $lightGrey;
+    background: url("../img/calendar.svg") no-repeat 90%;
+    background-size: 13px 13px;
+  }
+}
+
 //label-group
 .label-group{
   display: flex;
@@ -344,6 +375,9 @@
   justify-content: space-between;
 }
 
-
+//chart
+.chart-wrap{
+  padding-bottom: 30px;
+}
 
 

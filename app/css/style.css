@@ -262,6 +262,13 @@ option, option:hover {
   .panel .panel-footer {
     padding: 30px 0; }
 
+.panel-date {
+  padding: 30px 0;
+  border-bottom: 1px solid #e3e3e3; }
+
+.datepicker-form .btn {
+  vertical-align: middle; }
+
 .form-control {
   border: 1px solid #e3e3e3;
   height: 40px;
@@ -270,6 +277,21 @@ option, option:hover {
   padding: 6px 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 300; }
+
+.date-input-wrap {
+  padding: 4px 0;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle; }
+  .date-input-wrap .date-control {
+    padding: 12px 16px; }
+  .date-input-wrap #to {
+    border-left: 1px solid #e3e3e3;
+    background: url("../img/calendar.svg") no-repeat 90%;
+    -webkit-background-size: 13px 13px;
+            background-size: 13px 13px; }
 
 .label-group {
   display: -webkit-box;
@@ -284,6 +306,9 @@ option, option:hover {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+.chart-wrap {
+  padding-bottom: 30px; }
 
 .guide-wrap {
   padding: 20px; }
