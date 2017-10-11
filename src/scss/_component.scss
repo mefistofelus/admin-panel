@@ -20,7 +20,6 @@
 
 
 // Links
-
 .link{
   font-size: $linkFontSizeDefault;
   color: $linkColor;
@@ -35,7 +34,6 @@
 }
 
 //Buttons
-
 .btn{
   padding: 12px 22px;
   font-size: $btnFontSize;
@@ -103,15 +101,15 @@
       padding: 30px 18px;
       color: $grey;
     }
-      td{
-        border-top: 1px solid $lightGrey;
-        padding: 18px;
-      }
+    td{
+      border-top: 1px solid $lightGrey;
+      padding: 18px;
+    }
 
-      &.td-title{
-        font-size: 16px;
-        color: $grey;
-      }
+    &.td-title{
+      font-size: 16px;
+      color: $grey;
+    }
   }
 
   .table-sort{
@@ -380,4 +378,39 @@
   padding-bottom: 30px;
 }
 
+//modal
+.modal{
+  background-color: #fff;
+  display: none;
 
+  .modal-header{
+    @extend %title;
+    padding: $defaultIndent;
+    border-bottom: 1px solid $lightGrey;
+  }
+
+  .modal-body{
+    padding: 0 $defaultIndent;
+
+    form{
+      padding: 25px 0;
+
+      .label-group{
+
+        & + .label-group{
+          margin-left: $defaultIndent;
+        }
+
+        label{
+          font-weight: $fontBold;
+          display: block;
+          padding-bottom: $defaultIndent;
+        }
+      }
+    }
+  }
+}
+
+#add-links-modal{
+  width: 1075px;
+}

@@ -1,6 +1,6 @@
 $( function() {
 
-    //datepicker init
+    // dateoicker init
     var dateFormat = "mm/dd/yy",
         from = $( "#from" )
             .datepicker({
@@ -30,43 +30,83 @@ $( function() {
 
         return date;
     }
-});
 
-    //chart init
+
+    // chart init
     var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
+    if (ctx){
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["01", "02", '03', '04', '05', '06', '07', '08', '09', '10'],
+                datasets: [
+                    {
+                        label: '# of Votes',
+                        data: [100, 190, 120, 200, 210, 150, 175, 143, 110, 130],
+                        backgroundColor: [
+                            'rgba(128, 191, 202, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(128, 191, 202, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(128, 191, 202, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(128, 191, 202, 1)',
+                            'rgba(255, 154, 56, 1)',
+                            'rgba(128, 191, 202, 1)',
+                            'rgba(255, 154, 56, 1)',
+                        ]
                     }
-                }]
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
             }
+        });
+    }
+
+
+    // modal init
+    var modalBtns = $('[data-modal]');
+
+    modalBtns.on('click', function (event) {
+        event.preventDefault();
+        $('.modal').bPopup();
+
+        var target = $(this).attr('data-modal');
+
+        $(target).bPopup({
+            closeClass:'close-modal'
+        });
+    });
+
+    // scrollbar init
+    //$('.scrollbar-inner').scrollbar();
+
+
+    // range slider init
+    var handle = $( "#custom-handle" );
+    var range = $( "#slider" );
+    range.slider({
+        value: 60,
+        orientation: "horizontal",
+        range: "min",
+        animate: true,
+        max: 200,
+
+        create: function(event, ui) {
+            handle.append('<span class="value">'+$( this ).slider( "value" )+'hours</span>');
+            var value = handle.find('.value');
+            range.slider('option', 'valueSpan', value);
+        },
+        slide: function( event, ui ) {
+            range.slider( "option" ,"valueSpan").text(ui.value + 'hours');
         }
     });
+
+} );
