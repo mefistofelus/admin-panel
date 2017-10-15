@@ -86,8 +86,7 @@ $( function() {
     });
 
     // scrollbar init
-    //$('.scrollbar-inner').scrollbar();
-
+    $('.scrollbar-inner').scrollbar();
 
     // range slider init
     var handle = $( "#custom-handle" );
@@ -98,7 +97,6 @@ $( function() {
         range: "min",
         animate: true,
         max: 200,
-
         create: function(event, ui) {
             handle.append('<span class="value">'+$( this ).slider( "value" )+'hours</span>');
             var value = handle.find('.value');

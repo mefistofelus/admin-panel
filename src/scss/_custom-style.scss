@@ -5,6 +5,10 @@
   & > *{
     margin-bottom: 15px;
   }
+
+  &.range-slider-wrap{
+    height: 100px;
+  }
 }
 
 //Main style
@@ -15,4 +19,63 @@ main{
 
 .links .table{
   margin: $defaultIndent 0;
+}
+
+.generate-links-form{
+  .form-control{
+    flex-grow: 1;
+    margin-right: 16px;
+  }
+}
+
+._mobileSidebar{
+
+  main{
+    padding-left: $sidebarMobileWidth;
+  }
+
+  .aside{
+    width: $sidebarMobileWidth;
+    overflow-y: visible;
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .aside-menu{
+    a{
+      .icon{
+        margin-right: 0;
+      }
+      .menu-link{
+        display: none;
+      }
+    }
+  }
+
+  .your-manager{
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .page-title{
+      display: none;
+    }
+
+    .manager-info{
+
+      .manager-photo{
+        margin-right: 0;
+
+        img{
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .link{
+        display: none;
+      }
+    }
+  }
 }
