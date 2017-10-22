@@ -19,12 +19,23 @@
 </head>
 <body>
 <!--HEADER START-->
-<header class="fixed-to-top header">
-    <div class="flex-container container-fluid">
-        <div class="user-controls">
-
+<header class="header fixed-to-top">
+    <div class="user-controls flex-container align-items-center">
+        <div class="user-controls-item user-balance flex-container align-items-center dropdown-wrap">
+            <span>$1,500.00</span>
+            <div class="dropdown-menu">
+                <ul>
+                    <li><a href="">link</a></li>
+                    <li><a href="">link</a></li>
+                    <li><a href="">link</a></li>
+                </ul>
+            </div>
         </div>
-
+        <div class="user-controls-item user-news flex-container align-items-center"></div>
+        <div class="user-controls-item user-login flex-container align-items-center">
+            <a href="">Leonardo Dicaprio</a>
+        </div>
+        <div class="user-controls-item user-log-out flex-container align-items-center"></div>
     </div>
 </header>
 <!--HEADER END-->
@@ -120,7 +131,7 @@
             <div class="panel-body">
                 <div class="container container-sm">
                     <div class="chart-wrap">
-                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <canvas id="myChart" width="600" height="300"></canvas>
                     </div>
                 </div>
             </div>
@@ -235,6 +246,15 @@
     </div>
 </div>
 
+<!--Pre loader start-->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div id="object"></div>
+        </div>
+    </div>
+</div>
+<!--Pre loader end-->
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

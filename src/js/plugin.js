@@ -28,7 +28,7 @@
 
   });
 
-  // loader hide
+  // preloader hide
   var loader = $('#loading');
 
   $(window).on('load', function(e){

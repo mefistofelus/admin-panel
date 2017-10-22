@@ -819,6 +819,65 @@ option, option:hover {
 .scrollbar-chrome > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
   top: -19px; }
 
+#loading {
+  background-color: #f58220;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  margin-top: 0px;
+  top: 0;
+  -webkit-transition: opacity .3s linear, z-index .1s linear .3s;
+  -o-transition: opacity .3s linear, z-index .1s linear .3s;
+  transition: opacity .3s linear, z-index .1s linear .3s; }
+
+#loading.hide {
+  z-index: -1;
+  opacity: 0; }
+
+#loading-center {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+#loading-center-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px; }
+
+#object {
+  width: 80px;
+  height: 80px;
+  background-color: #FFF;
+  -webkit-animation: animate 1s infinite ease-in-out;
+  animation: animate 1s infinite ease-in-out;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px; }
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: perspective(160px); }
+  50% {
+    -webkit-transform: perspective(160px) rotateY(-180deg); }
+  100% {
+    -webkit-transform: perspective(160px) rotateY(-180deg) rotateX(-180deg); } }
+
+@keyframes animate {
+  0% {
+    transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+    -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(0deg); }
+  100% {
+    transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+    -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(-180deg); } }
+
 .section-title, .page-title, .modal .modal-header {
   color: #a6a6a6;
   font-size: 16px;
@@ -1106,11 +1165,31 @@ input[type="radio"] {
   #add-links-modal .checkbox-group {
     width: 30%; }
 
-#custom-hadle {
-  top: 12px; }
-  #custom-hadle span {
+#custom-handle {
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-bottom-color: #ffa200;
+  background: transparent; }
+  #custom-handle span {
     position: absolute;
-    top: 150%; }
+    top: 25px;
+    left: -25px; }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  top: 100%; }
+
+.dropdown-wrap {
+  position: relative; }
+  .dropdown-wrap:hover .dropdown-menu {
+    display: block; }
 
 .guide-wrap {
   padding: 20px; }
@@ -1143,21 +1222,52 @@ main {
 ._mobileSidebar .logo {
   display: none; }
 
+._mobileSidebar .menu-control {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+._mobileSidebar .aside-menu li {
+  text-align: center;
+  position: relative; }
+  ._mobileSidebar .aside-menu li:hover .menu-link {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+
 ._mobileSidebar .aside-menu a .icon {
   margin-right: 0; }
 
 ._mobileSidebar .aside-menu a .menu-link {
-  display: none; }
+  display: none;
+  position: absolute;
+  left: 100%;
+  height: 100%;
+  min-width: 150px;
+  background-color: #333;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+  top: 0; }
 
 ._mobileSidebar .your-manager {
   padding-left: 5px;
   padding-right: 5px; }
   ._mobileSidebar .your-manager .page-title {
     display: none; }
-  ._mobileSidebar .your-manager .manager-info .manager-photo {
-    margin-right: 0; }
-    ._mobileSidebar .your-manager .manager-info .manager-photo img {
-      width: 40px;
-      height: 40px; }
-  ._mobileSidebar .your-manager .manager-info .link {
-    display: none; }
+  ._mobileSidebar .your-manager .manager-info {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    ._mobileSidebar .your-manager .manager-info .manager-photo {
+      margin-right: 0; }
+      ._mobileSidebar .your-manager .manager-info .manager-photo img {
+        width: 40px;
+        height: 40px; }
+    ._mobileSidebar .your-manager .manager-info .link {
+      display: none; }
